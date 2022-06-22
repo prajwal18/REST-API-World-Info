@@ -1,13 +1,155 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    /*Font Used*/
+    --font-used: 'Nunito Sans', sans-serif;
+    --font-size: 16px; /* home Page small country text -14px */
+
+    /*Colors Used*/
+    --dark-element: hsl(209, 23%, 22%);
+    --dark-bg: hsl(207, 26%, 17%);
+    --light-text: hsl(200, 15%, 8%);
+    --light-input: hsl(0, 0%, 52%);
+    --light-bg: hsl(0, 3%, 93%);
+    --dark-text-light-elem: hsl(0, 0%, 100%);
+}
+*,*::before,*::after{
+    margin: 0px; padding: 0px; box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    font-size: var(--font-size);
+}
+h1,h2,h3,h4{
+    font-weight: 600;
+    word-break: break-all;
+}
+.country-info p{
+    font-weight: 600;
+}
+p span{
+    font-weight: 300;
+    color: hsl(0, 0%, 95%);
+}
+.light-bg p span{
+    color: hsl(200, 15%, 8%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+body, #root{
+    display: flex;
+    height: 100%;
+    flex-flow: column;
+}
+#root{
+    flex-grow: 1;
+    display: flex;
+}
+
+
+/* Formatting */
+.App{
+    flex-grow: 1;
+    padding-bottom: 50px;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    gap: 3rem;
+}
+nav{
+    width: 100%;
+}
+.inner-container, main{
+    max-width: 1440px;
+    width: 100%;
+}
+
+
+/* Styling the application */
+.dark-bg{
+    background-color: var(--dark-bg);
+    color: var(--dark-text-light-elem);
+}
+.light-bg{
+    background-color: var(--light-bg);
+    color: var(--light-text);
+}
+.light-bg input{
+    color: var(--light-input);
+}
+
+/*Dark elements*/
+nav, .btn, .element, .drop-down{
+    background-color: var(--dark-element);
+    box-shadow: 0px 0px 10px hsla(0, 0%, 0%, 0.3);
+}
+/*Light Elements*/
+.light-bg nav, .light-bg .btn, 
+.light-bg .element, .light-bg .drop-down{
+    background-color: var(--dark-text-light-elem);
+    box-shadow: 0px 0px 10px hsla(0, 0%, 0%, 0.1);
+}
+input{
+    background-color: var(--dark-element);
+    outline: none;
+    width: 100%;
+    max-width: 300px;
+}
+.light-bg input{
+    background-color: var(--dark-text-light-elem);
+}
+
+/* Flag Image inside Country Page */
+.image-part img{
+    display: block;
+    min-width: 450px;
+    max-width: 450px;
+}
+@media screen and (max-width:500px) {
+    .image-part img{
+        min-width: 350px
+    }
+}
+
+.element{
+    overflow: hidden;
+    cursor: pointer;
+}
+.element img{
+    display: block;
+    max-height: 200px;
+}
+.element .image-container{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Search Filter */
+.search-filter .element{
+    width: 100%;
+    max-width: 400px;
+}
+.input-label{
+    position: absolute;
+    left: -900px;
+}
+
+/*Country Page*/
+.ind-country{
+    max-width: 300px;
+}
+@media screen and (max-width: 610px) {
+    .country-info{
+        max-width: 450px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .country-info{
+        max-width: 700px;
+    }
 }
