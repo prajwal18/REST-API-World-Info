@@ -53,7 +53,13 @@ const HomePage = () => {
                     <>
                         {
                             !error?
-                            <p>Loading ...</p>:
+                            <>
+                            {
+                                !error && filteredData.length === 0?
+                                <p>No matching Result</p>:
+                                <p>Loading ...</p>
+                            }
+                            </>:
                             <p>Error Loading Data</p>
                         }
                     </>

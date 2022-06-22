@@ -113,6 +113,11 @@ input{
         min-width: 350px
     }
 }
+@media screen and (max-width:380px) {
+    .image-part img{
+        min-width: 330px
+    }
+}
 
 .element{
     overflow: hidden;

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import CountryPage from "./components/CountryPage";
+import NotFoundPage from "./components/NotFoundPage";
 
 /* Importing React icons */
 import {BsMoon, BsMoonFill} from "react-icons/bs";
@@ -31,6 +32,11 @@ function App() {
                 <Routes>
                     <Route path="/:countryId" element={<CountryPage />} />
                     <Route index element={<HomePage />} />
+                    <Route path="/*" element={
+                        <main className="flex flex-col gap-16 sm:px-12 px-4">
+                            <NotFoundPage />
+                        </main>
+                    } />
                 </Routes>
             </DataProvider>
         </div>

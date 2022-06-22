@@ -6,7 +6,6 @@ import axios from "axios";
 export const DataContext = createContext({});
 
 const URL = "https://restcountries.com/v3.1/all";
-const URLC = "https://restcountries.com/v3.1/alpha/"; // Need to add the country code cca3 at the end
 
 const DataProvider = ({children}) =>{
     const [allData, setAllData] = useState([]);
