@@ -57,7 +57,7 @@ const DataProvider = ({children}) =>{
 
     return(
         <DataContext.Provider value={{
-            URLC, allData, INTEGER_FORMATTER,
+            allData, INTEGER_FORMATTER,
             codeCountry, filter, setFilter,
             filteredData, REGIONS, region, setRegion,
             toggle, setToggle, error
