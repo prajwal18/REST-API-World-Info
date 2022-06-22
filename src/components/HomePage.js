@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const HomePage = () => {
-    const { filteredData, INTEGER_FORMATTER, error } = useContext(DataContext);
+    const { allData, filteredData, INTEGER_FORMATTER, error } = useContext(DataContext);
     const navigate = useNavigate();
 
     //Get Capital
@@ -55,7 +55,7 @@ const HomePage = () => {
                             !error?
                             <>
                             {
-                                !error && filteredData.length === 0?
+                                filteredData.length === 0 && allData.length !== 0?
                                 <p>No matching Result</p>:
                                 <p>Loading ...</p>
                             }
